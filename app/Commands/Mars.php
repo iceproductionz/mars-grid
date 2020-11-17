@@ -27,17 +27,17 @@ class Mars extends Command
         $helper = $this->getHelper('question');
 
         $this->grid = $this->gridService->generateFromString(
-            $helper->ask($input, $output, new Question(''))
+            $helper->ask($input, $output, new Question('Gird Size: '))
         );
 
         for ($i=0; $i<3; $i++) {
             $robot = $this->gridService->createRobotFromString(
-                $helper->ask($input, $output, new Question(''))
+                $helper->ask($input, $output, new Question('Robot Start: '))
             );
             $this->gridService->processMovesFromString(
                 $this->grid,
                 $robot,
-                $helper->ask($input, $output, new Question(''))
+                $helper->ask($input, $output, new Question('Robot Actions: '))
             );
             $output->writeln('');
 

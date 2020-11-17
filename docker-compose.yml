@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  cli:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+    - .:/app
+    command: php ./bin/cli.php mars
